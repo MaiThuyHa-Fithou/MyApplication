@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView tvName;
     EditText edtUserName;
     Button btnShow, btnClose;
+    ImageButton btnDelete;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +40,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtUserName = findViewById(R.id.edtUserName);
         btnShow = findViewById(R.id.btnShow);
         btnClose = findViewById(R.id.btnClose);
+        btnDelete = findViewById(R.id.btnDelete);
+        //xu ly su kien thu 3
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this," Day la nut xoa!!!", Toast.LENGTH_LONG).show();
+            }
+        });
         btnShow.setOnClickListener(this::onClick);
     }
 
